@@ -1,0 +1,49 @@
+{% extends "astrology/base.html" %}
+{% block content %}
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <!-- Post content-->
+
+                    <article>
+                        {% for zodi in zodis %}
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">{{zodi.title}}</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">Posted on {{ zodi.date_posted }}</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#mar">ወላጆች</a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#career">ተስማሚ የስራ መስክ</a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" style="width: 1000px" src="https://s3.r29static.com/bin/entry/671/0,0,2000,1050/x/1676858/image.png" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            
+                            <p class="fs-5 mb-4">{{zodi.content}}</p>
+                            <p class="fs-5 mb-4">{{zodi.content_2}}</p>
+                            <p class="fs-5 mb-4"></p>
+                            <h2 class="fw-bolder mb-4 mt-5" id="mar">{{zodi.title}} ወላጆች</h2>
+                            <p class="fs-5 mb-4">{{zodi.marriage}}</p>
+                            <p class="fs-5 mb-4">{{zodi.marriage_2}}</p>
+                            <h2 class="fw-bolder mb-4 mt-5" id="career">ተስማሚ የስራ መስክ</h2>
+                            <p class="fs-5 mb-4">{{zodi.career}}</p>
+                            <p class="fs-5 mb-4">{{zodi.career_2}}</p>
+                        
+                        
+                        </section>
+                        {% endfor %}
+                    </article>
+                    
+                </div>
+                <!-- Side widgets-->
+                
+            </div>
+        </div>
+        
+        
+        
+{% endblock content %}
